@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #33555a;
+    --black: #000;
+    --white: #fff;
+    --background: #eeece9;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.22);
+    --transition: .5s ease;
+    --will-change: transform;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 15px;
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #273e42;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #356970;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+
+*::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* =========================== F E A T U R E S =========================== */
+
+.features-section {
+    background-color: var(--background);
+}
+
+.features-section .featured-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.features-section .featured-content .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.features-section .featured-content .head h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+}
+
+.features-section .featured-content .head a {
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    transition: var(--transition);
+}
+
+.features-section .featured-content .head a:hover {
+    background-color: #356970;
+}
+
+.features-section .featured-content .fea-box {
+    margin-bottom: 20px;
+}
+
+.features-section .featured-content .fea-box .inner {
+    position: relative;
+    max-width: 25em;
+    overflow: hidden;
+    border-radius: 20px;
+    height: calc(35em);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.37);
+}
+
+.features-section .featured-content .fea-box .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.features-section .featured-content .fea-box:hover .overlay {
+    opacity: 1;
+}
+
+.features-section .featured-content .fea-box:hover img {
+    filter: blur(1.5px) brightness(60%);
+    transform: scale(1.05);
+}
+
+.features-section .featured-content .fea-box img {
+    will-change: transform;
+    width: 110%;
+    min-height: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.features-section .featured-content .fea-box .overlay p {
+    color: var(--white);
+    font-size: 2.8em;
+    letter-spacing: 5px;
+    text-align: center;
+    cursor: default;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 #33555a;
+    font-weight: 800;
+}

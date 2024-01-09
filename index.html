@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Example</title>
+
+    <!-- Fontawesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ================= START HEADER ================= -->
+
+    <div class="header">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container-fluid">
+                <div class="logo">
+                    <a href="index.html"><span>F A B</span><span>U L O U S</span></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav justify-content-center d-flex text-center me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#footer">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="form.html" target="_blank">Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://www.gloomaps.com/dElnAWMMwA"
+                                target="_blank">SiteMap</a>
+                        </li>
+                    </ul>
+                    <div class="icons">
+                        <div class="fas fa-search" id="searchIcon"></div>
+                        <div class="fas fa-shopping-cart" id="cartIcon" onclick="openCart()">
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+
+                        <a href="login.html" class="join">Join</a>
+                        <div class="fas fa-bars" id="menu-bar"></div>
+                    </div>
+                    <div class="search-bar" id="searchBar">
+                        <input type="text" placeholder="Search...">
+                        <button>Search</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+    <!-- ================= START HOME PAGE ================= -->
+    <section class="home" id="home">
+        <div class="content container">
+            <h3>Embark on a Journey of Glamour with <span>Fabulous</span> Styles</h3>
+            <div class="explore">
+                <a href="#products">SHOP NOW <i class="fa-solid fa-angles-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= START ABOUT US ================= -->
+    <section class="about" id="about">
+        <h1 class="heading">about us</h1>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <img src="images/about2.jpeg">
+                </div>
+                <div class="col about-content">
+                    <p>
+                        <span>Welcome to Our Story.</span>
+                        <br>
+                        Discover the journey of passion, innovation, and dedication that defines who we are.
+                        From humble
+                        beginnings to a vision for the future, we take pride in our commitment to excellence.
+                    </p>
+                    <br>
+                    <p>
+                        Welcome to the digital realm of Fabulous! Our website is a vibrant hub where style meets
+                        innovation
+                        and where you embark on a journey through the extraordinary. At Fabulous, we believe in
+                        redefining
+                        the online experience, offering a curated collection of products and services that
+                        reflect the
+                        essence
+                        of sophistication and trendsetting elegance.
+                        <br><br>
+                        Navigating our digital domain, you'll discover a
+                        seamless
+                        fusion of cutting-edge design, user-friendly functionality, and a commitment to
+                        delivering
+                        nothing
+                        short of excellence.
+                    </p>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="about-icon">
+                                <img src="images/icon1.png">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="about-icon">
+                                <img src="images/icon2.png">
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="about-icon">
+                                <img src="images/icon3.png">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ================= START BANNERS ================= -->
+    <div class="banners" id="banners">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/men-banner1.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/women-banner.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/kids-banner.jpg" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ================= START PRODUCTS ================= -->
+    <section class="products" id="products">
+        <div class="container products-container">
+            <h1>Winter Offers</h1>
+            <p>30% discount</p>
+            <div class="pros text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row" id="winterOfferItems"></div>
+                    </div>
+                </div>
+                <div class="explore">
+                    <a href="products.html">SHOW MORE <i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- ================= START FEATURES2 ================= -->
+
+    <section class="features2" id="features2">
+        <div class="container fea2-container">
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <i class="fa-solid fa-truck"></i>
+                        <p>Free Shipping</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <p>Fast Returns</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <p>Weekly Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= START TASTIMONIALS ================= -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h3>Customers reviews</h3>
+            <div class="row">
+                <div class="col review-box">
+                    <img src="images/user1.jpg" class="user">
+                    <p class="name">Mark</p>
+                    <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>
+                        Hey there, it's Mark! Just had to drop a line about this fantastic fashion haven. The sleek and
+                        modern design of the website makes navigating a breeze. The curated selection is spot-on, and
+                        the
+                        seamless functionality ensures a smooth shopping experience. I'm giving it a solid 4.5 stars –
+                        it's
+                        close to perfection, and the attention to detail is impressive!.
+                    </p>
+                    </p>
+                    <div class="stars">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col review-box">
+                    <img src="images/user2.jpg" class="user">
+                    <p class="name">Alina</p>
+                    <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>
+
+                        Alina here, and let me tell you about my recent fashion find. This website is a gem with its
+                        trendy
+                        collections and user-friendly interface. Navigating through the styles is a pleasure, and I
+                        appreciate the attention to detail in the design. I'm leaning towards a 4-star rating – the
+                        variety
+                        is great, and the experience is top-notch. A few more unique pieces, and it'll easily snag that
+                        extra star!.
+                    </p>
+                    <div class="stars">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col review-box">
+                    <img src="images/user3.jpg" class="user">
+                    <p class="name">Selin</p>
+                    <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                    <p>
+                        Selin in the house! I've stumbled upon a fashion paradise here. The website's chic layout and
+                        seamless browsing make it a joy to explore. The curated styles are on point, and the overall
+                        vibe is
+                        five stars all the way. Without a doubt, I'm giving it a solid 5-star rating. Cheers to a
+                        fashion-forward platform that's acing the game!.
+                    </p>
+                    <div class="stars">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= START CONTACT US ================= -->
+
+
+
+    <div class="footer " id="footer">
+        <div class="footer-content container">
+            <div class="row">
+                <div class="section col-lg-4">
+                    <div class="logo">
+                        <a href="index.html"><span>F A B</span>U L O U S</a>
+                    </div>
+                    <p>
+                        Welcome to the world of FABULUS! Our mission is to bring you extraordinary experiences and
+                        products
+                        that redefine the ordinary.
+                    </p>
+                    <div class="contact">
+                        <a href=""><i class="fas fa-phone"></i>&nbsp; 123-456-7890</a>
+                        <br>
+                        <a href=""><i class="fas fa-envelope"></i>&nbsp; info@fabulous.com</a>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/mahmoudabusalah2004" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://github.com/mahmoudabusalah" target="_blank"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/mahmoud.__.as/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="section col-lg-4 links">
+                    <h3>Quick links</h3>
+                    <div class="links-container">
+                        <a href="#home">Home</a>
+                        <a href="">Contact</a>
+                        <a href="">Mentors</a>
+                        <a href="">Terms and conditions</a>
+                    </div>
+                </div>
+                <div class="section col-lg-4 form">
+                    <h3>contact us</h3>
+                    <div class="form-container">
+                        <form>
+                            <input type="email" placeholder="Email" class="email">
+                            <textarea cols="30" rows="10" placeholder="Massege..."></textarea>
+                            <a href="">Submit</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Fabulous.com | Designed By Mahmoud Abusalah
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ================ Cart defalut items=============== -->
+    <div class="cart-section" id="cartSection">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+
+            <div class="cart-items" id="cartItems">
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro1.webp">
+                    </div>
+                    <div class="name">
+                        <p>Manfinity Men Cotton Jacket</p>
+                    </div>
+                    <div class="price">
+                        <p>$18.61</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro7.webp">
+                    </div>
+                    <div class="name">
+                        <p>Manfinity EMRG Men Cotton</p>
+                    </div>
+                    <div class="price">
+                        <p>$19.16</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro8.webp">
+                    </div>
+                    <div class="name">
+                        <p>Manfinity Men Jeans Jacket</p>
+                    </div>
+                    <div class="price">
+                        <p>$20.21</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro6.webp">
+                    </div>
+                    <div class="name">
+                        <p>Manfinity Men Cotton Jacket</p>
+                    </div>
+                    <div class="price">
+                        <p>$18.61</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+
+                    <div class="total-price">
+
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro2.webp">
+                    </div>
+                    <div class="name">
+                        <p>Men Letter Drawstring Hooded Jacket</p>
+                    </div>
+                    <div class="price">
+                        <p>$26.99</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+
+                    <div class="total-price">
+
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-image">
+                        <img src="../images/pro3.webp">
+                    </div>
+                    <div class="name">
+                        <p>Men Letter Hooded Jacket</p>
+                    </div>
+                    <div class="price">
+                        <p>$13.48</p>
+                    </div>
+                    <div class="quantity">
+                        <input type="number" value="1" min="1" max="99" class="quantity-input">
+                    </div>
+                    <div class="trash">
+                        <span><i class="fa-solid fa-trash-can"></i></span>
+                    </div>
+
+                    <div class="total-price">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-price" id="totalPrice">
+                Shipping Cost: $10.00
+                <br>
+                Tax Cost: $5.00
+                <br>
+                Total Cost: $0.00
+            </div>
+
+            <div class="btns">
+                <button class="close" onclick="closeCart()">Close</button>
+                <button class="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/items.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/search.js"></script>
+    
+
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

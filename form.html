@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BMI Calculator</title>
+  <style>
+    .validation-message {
+      color: red;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div id="datetime"></div> 
+  <h1>BMI Calculator</h1>
+  <form>
+    <!-- <label for="height">Height (in meters): </label>
+         in input ==> step="0.01" required 
+         ==> if i want to take it off(السهم) just change type from number to text
+                 <select id="lifestyle" required>
+            <option value="">Select at least one lifestyle option!</option>
+            <option value="active">Active</option>
+            <option value="sedentary">Sedentary</option>
+        </select>
+        -->
+    Height (in meters): <input type="number" id="height" min="0" required>
+    <span id="heightError" class="validation-message"></span>
+    <br><br>
+    <!-- <label for="weight">Weight (in kilograms): </label> -->
+    Weight (in kilograms): <input type="number" id="weight" min="0" required>
+    <span id="weightError" class="validation-message"></span>
+    <br><br>
+
+    <!-- <label for="gender"></label> -->
+    Gender: <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female" checked> Female
+    <span id="genderError" class="validation-message"></span>
+    <br><br>
+
+    <!-- <label for="lifestyle">Lifestyle:</label> -->
+    Lifestyle: <input type="checkbox" name="lifestyle" value="active" /> Active
+    <input type="checkbox" name="lifestyle" value="sedentary" /> Sedentary
+    <span id="lifestyleError" class="validation-message"></span>
+    <br><br>
+
+    <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+    <br><br><br>
+    <textarea name="message" rows="10" cols="30" id="result" readonly></textarea>
+  </form>
+
+  <script>
+    function calculateBMI() {
+      console.log("calculateBMI function is called");
+      var heightError = document.getElementById("heightError");
+      var weightError = document.getElementById("weightError");
+      var genderError = document.getElementById("genderError");
+      var lifestyleError = document.getElementById("lifestyleError");
+
+      heightError.textContent = "";
+      weightError.textContent = "";
+      genderError.textContent = "";
+      lifestyleError.textContent = "";
+
+      var heightInput = document.getElementById("height").value;
+      var weightInput = document.getElementById("weight").value;
+      var genderInput = document.querySelector(
+        'input[name="gender"]:checked'
+      );
+      var lifestyleInputs = document.querySelectorAll(
+        'input[name="lifestyle"]:checked'
+      );
+
+      if (
+        !heightInput ||
+        isNaN(heightInput) ||
+        parseFloat(heightInput) <= 0
+      ) {
+        heightError.textContent = "[!] Enter a valid positive height";
+      }
+
+      if (
+        !weightInput ||
+        isNaN(weightInput) ||
+        parseFloat(weightInput) <= 0
+      ) {
+        weightError.textContent = "[!] Enter a valid positive weight";
+      }
+
+      if (!genderInput) {
+        genderError.textContent = "[!] Please select a gender";
+      }
+
+      if (lifestyleInputs.length === 0) {
+        lifestyleError.textContent = "[!] Please select a lifestyle";
+      }
+
+      if (
+        heightError.textContent ||
+        weightError.textContent ||
+        genderError.textContent ||
+        lifestyleError.textContent
+      ) {
+        console.log("Validation failed. Returning without calculating BMI.");
+        var resultElement = document.getElementById("result");
+        resultElement.textContent = "";
+        return;
+      }
+
+      var height = parseFloat(heightInput) / 100;
+      var weight = parseFloat(weightInput);
+      var bmi = weight / (height * height);
+
+      var resultElement = document.getElementById("result");
+      resultElement.textContent =
+        "Your Height is: " +
+        heightInput +
+        "\nYour Weight is: " +
+        weightInput +
+        "\nYour Gender is: " +
+        genderInput.value +
+        "\nYour Lifestyle is: " +
+        getSelectedLifestyles() +
+        "\nYour BMI is: " +
+        bmi.toFixed(2) +
+        "\nStatus: " +
+        getBMIStatus(bmi);
+      console.log("BMI calculation successful");
+    }
+
+    function getSelectedLifestyles() {
+      var selectedLifestyles = [];
+      var lifestyleInputs = document.querySelectorAll(
+        'input[name="lifestyle"]:checked'
+      );
+      lifestyleInputs.forEach(function (input) {
+        selectedLifestyles.push(input.value);
+      });
+      return selectedLifestyles.join(", ");
+    }
+
+    function getBMIStatus(bmi) {
+      if (bmi < 18.5) {
+        return "Underweight";
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        return "Normal weight";
+      } else if (bmi >= 25 && bmi < 29.9) {
+        return "Overweight";
+      } else {
+        return "Obese";
+      }
+    }
+
+
+    function updateDateTime() {
+      var dateTimeElement = document.getElementById("datetime");
+      var now = new Date();
+      var dateTimeString =
+        "Current Date and Time: " +
+        now.toLocaleDateString() +
+        " " +
+        now.toLocaleTimeString();
+      dateTimeElement.textContent = dateTimeString;
+    }
+
+    updateDateTime();
+   setInterval(updateDateTime, 1000);
+  </script>
+
+</body>
+
+</html>
